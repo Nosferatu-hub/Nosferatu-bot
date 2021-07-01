@@ -232,10 +232,6 @@ def start(update: Update, context: CallbackContext):
                              ),
                         ],
                         [
-                            InlineKeyboardButtom(
-                                text="My owner's information😎",
-                                url="https://t.me/DarkGod14Info",
-                             ),
                             InlineKeyboardButton(
                                 text="Deploy To Heroku💻",
                                 url="https://heroku.com/deploy?template=https://github.com/DarkGod14/MinatoNamikaze-bot.git",
