@@ -179,8 +179,8 @@ def start(update: Update, context: CallbackContext):
                 )
             elif args[0].lower() == "markdownhelp":
                 IMPORTED["extras"].markdown_help_sender(update)
-            elif args[0].lower() == "super_users":
-                IMPORTED["super_users"].send_super_users(update)
+            elif args[0].lower() == "god_mode":
+                IMPORTED["god_mode"].send_god_mode(update)
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
                 chat = dispatcher.bot.getChat(match.group(1))
