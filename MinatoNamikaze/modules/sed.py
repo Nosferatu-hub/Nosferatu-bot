@@ -2,9 +2,9 @@ import sre_constants
 
 import regex
 import telegram
-from AstrakoBot import LOGGER, dispatcher
-from AstrakoBot.modules.disable import DisableAbleMessageHandler
-from AstrakoBot.modules.helper_funcs.regex_helper import infinite_loop_check
+from MinatoNamikaze import LOGGER, dispatcher
+from MinatoNamikaze.modules.disable import DisableAbleMessageHandler
+from MinatoNamikaze.modules.helper_funcs.regex_helper import infinite_loop_check
 from telegram import Update
 from telegram.ext import CallbackContext, Filters, run_async
 

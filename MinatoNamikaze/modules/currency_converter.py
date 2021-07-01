@@ -1,9 +1,9 @@
 import requests
-from AstrakoBot import CASH_API_KEY, dispatcher
+from MinatoNamikaze import CASH_API_KEY, dispatcher
 from telegram import Update, ParseMode
 from telegram.ext import CallbackContext, CommandHandler, run_async
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.helper_funcs.misc import delete
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.helper_funcs.misc import delete
 
 
 def convert(update: Update, context: CallbackContext):

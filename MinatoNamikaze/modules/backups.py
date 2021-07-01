@@ -5,23 +5,23 @@ from telegram import ParseMode, Message, Update
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, CallbackContext, run_async
 
-import AstrakoBot.modules.sql.notes_sql as sql
-from AstrakoBot import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
-from AstrakoBot.__main__ import DATA_IMPORT
-from AstrakoBot.modules.helper_funcs.chat_status import user_admin
-from AstrakoBot.modules.helper_funcs.alternate import typing_action
+import MinatoNamikaze.modules.sql.notes_sql as sql
+from MinatoNamikaze import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
+from MinatoNamikaze.__main__ import DATA_IMPORT
+from MinatoNamikaze.modules.helper_funcs.chat_status import user_admin
+from MinatoNamikaze.modules.helper_funcs.alternate import typing_action
 
-# from AstrakoBot.modules.rules import get_rules
-import AstrakoBot.modules.sql.rules_sql as rulessql
+# from MinatoNamikaze.modules.rules import get_rules
+import MinatoNamikaze.modules.sql.rules_sql as rulessql
 
-# from AstrakoBot.modules.sql import warns_sql as warnssql
-import AstrakoBot.modules.sql.blacklist_sql as blacklistsql
-from AstrakoBot.modules.sql import disable_sql as disabledsql
+# from MinatoNamikaze.modules.sql import warns_sql as warnssql
+import MinatoNamikaze.modules.sql.blacklist_sql as blacklistsql
+from MinatoNamikaze.modules.sql import disable_sql as disabledsql
 
-# from AstrakoBot.modules.sql import cust_filters_sql as filtersql
-# import AstrakoBot.modules.sql.welcome_sql as welcsql
-import AstrakoBot.modules.sql.locks_sql as locksql
-from AstrakoBot.modules.connection import connected
+# from MinatoNamikaze.modules.sql import cust_filters_sql as filtersql
+# import MinatoNamikaze.modules.sql.welcome_sql as welcsql
+import MinatoNamikaze.modules.sql.locks_sql as locksql
+from MinatoNamikaze.modules.connection import connected
 
 
 @user_admin
@@ -323,7 +323,7 @@ def export_data(update: Update, context: CallbackContext):
         },
     }
     baccinfo = json.dumps(backup, indent=4)
-    with open("AstrakoBot{}.backup".format(chat_id), "w") as f:
+    with open("MinatoNamikaze{}.backup".format(chat_id), "w") as f:
         f.write(str(baccinfo))
     context.bot.sendChatAction(current_chat_id, "upload_document")
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
@@ -339,15 +339,15 @@ def export_data(update: Update, context: CallbackContext):
         pass
     context.bot.sendDocument(
         current_chat_id,
-        document=open("AstrakoBot{}.backup".format(chat_id), "rb"),
-        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `AstrakoBot-Backup` was specially made for notes.".format(
+        document=open("MinatoNamikaze{}.backup".format(chat_id), "rb"),
+        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `MinatoNamikaze-Backup` was specially made for notes.".format(
             chat.title, chat_id, tgl
         ),
         timeout=360,
         reply_to_message_id=msg.message_id,
         parse_mode=ParseMode.MARKDOWN,
     )
-    os.remove("AstrakoBot{}.backup".format(chat_id))  # Cleaning file
+    os.remove("MinatoNamikaze{}.backup".format(chat_id))  # Cleaning file
 
 
 # Temporary data

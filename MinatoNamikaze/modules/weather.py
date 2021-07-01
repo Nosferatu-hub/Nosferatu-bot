@@ -6,9 +6,9 @@ from requests import get
 from telegram import Bot, Update, ParseMode
 from telegram.ext import Updater, CommandHandler
 from telegram.ext import CallbackContext, run_async
-from AstrakoBot import WEATHER_API, dispatcher
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.helper_funcs.misc import delete
+from MinatoNamikaze import WEATHER_API, dispatcher
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.helper_funcs.misc import delete
 
 
 def get_tz(con):

@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Integer, func, distinct
 
-from AstrakoBot.modules.sql import BASE, SESSION
+from MinatoNamikaze.modules.sql import BASE, SESSION
 
 
 class Approvals(BASE):

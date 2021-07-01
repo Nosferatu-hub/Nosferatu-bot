@@ -3,18 +3,18 @@ from io import BytesIO
 import random
 from typing import Optional
 
-import AstrakoBot.modules.sql.notes_sql as sql
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot import LOGGER, JOIN_LOGGER, SUPPORT_CHAT, dispatcher, SUDO_USERS
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.helper_funcs.handlers import MessageHandlerChecker
-from AstrakoBot.modules.helper_funcs.chat_status import user_admin, connection_status
-from AstrakoBot.modules.helper_funcs.misc import build_keyboard, revert_buttons, delete
-from AstrakoBot.modules.helper_funcs.msg_types import get_note_type
-from AstrakoBot.modules.helper_funcs.string_handling import (
+import MinatoNamikaze.modules.sql.notes_sql as sql
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze import LOGGER, JOIN_LOGGER, SUPPORT_CHAT, dispatcher, SUDO_USERS
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.helper_funcs.handlers import MessageHandlerChecker
+from MinatoNamikaze.modules.helper_funcs.chat_status import user_admin, connection_status
+from MinatoNamikaze.modules.helper_funcs.misc import build_keyboard, revert_buttons, delete
+from MinatoNamikaze.modules.helper_funcs.msg_types import get_note_type
+from MinatoNamikaze.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
 )
-from AstrakoBot.modules.private_notes import getprivatenotes
+from MinatoNamikaze.modules.private_notes import getprivatenotes
 from telegram import (
     MAX_MESSAGE_LENGTH,
     InlineKeyboardMarkup,

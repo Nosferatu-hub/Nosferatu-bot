@@ -2,13 +2,13 @@ import html
 import random
 import time
 
-import AstrakoBot.modules.fun_strings as fun_strings
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.helper_funcs.chat_status import is_user_admin
-from AstrakoBot.modules.helper_funcs.extraction import extract_user
-from AstrakoBot.modules.helper_funcs.misc import delete
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
+import MinatoNamikaze.modules.fun_strings as fun_strings
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.helper_funcs.chat_status import is_user_admin
+from MinatoNamikaze.modules.helper_funcs.extraction import extract_user
+from MinatoNamikaze.modules.helper_funcs.misc import delete
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async

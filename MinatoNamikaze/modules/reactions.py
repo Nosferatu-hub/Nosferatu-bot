@@ -1,7 +1,7 @@
 import random
 
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 

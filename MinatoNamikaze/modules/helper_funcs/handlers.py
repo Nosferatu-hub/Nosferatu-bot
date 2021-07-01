@@ -1,6 +1,6 @@
-import AstrakoBot.modules.sql.blacklistusers_sql as sql
-from AstrakoBot import ALLOW_EXCL
-from AstrakoBot import DEV_USERS, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
+import MinatoNamikaze.modules.sql.blacklistusers_sql as sql
+from MinatoNamikaze import ALLOW_EXCL
+from MinatoNamikaze import DEV_USERS, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS
 
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, Filters

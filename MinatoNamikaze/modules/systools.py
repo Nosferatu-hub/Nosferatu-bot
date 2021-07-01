@@ -9,7 +9,7 @@ import traceback
 import psutil
 import platform
 import sqlalchemy
-import AstrakoBot.modules.helper_funcs.git_api as git
+import MinatoNamikaze.modules.helper_funcs.git_api as git
 
 from datetime import datetime
 from platform import python_version, uname
@@ -19,11 +19,11 @@ from telegram.ext import CommandHandler, CallbackContext, CallbackQueryHandler, 
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest, Unauthorized
 
-from AstrakoBot import DEV_USERS, LOGGER, StartTime, dispatcher
-from AstrakoBot.modules.disable import DisableAbleCommandHandler, DisableAbleRegexHandler
-from AstrakoBot.modules.helper_funcs.misc import delete
-from AstrakoBot.modules.helper_funcs.chat_status import owner_plus, dev_plus, sudo_plus
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze import DEV_USERS, LOGGER, StartTime, dispatcher
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler, DisableAbleRegexHandler
+from MinatoNamikaze.modules.helper_funcs.misc import delete
+from MinatoNamikaze.modules.helper_funcs.chat_status import owner_plus, dev_plus, sudo_plus
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
 
 
 def get_readable_time(seconds: int) -> str:

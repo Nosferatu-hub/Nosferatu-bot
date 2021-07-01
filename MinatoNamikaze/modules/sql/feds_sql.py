@@ -1,8 +1,8 @@
 import ast
 import threading
 
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.sql import BASE, SESSION
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
 

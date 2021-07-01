@@ -1,53 +1,36 @@
-![AstrakoBot](https://i.imgur.com/1oah5E2.jpg)
-# AstrakoBot 
-<p align="center">
-<a href="https://www.codacy.com/gh/Astrako/AstrakoBot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Astrako/AstrakoBot&amp;utm_campaign=Badge_Grade" alt="Codacy Badge">
-<img src="https://app.codacy.com/project/badge/Grade/972e73015aaa4096bf109a79acae8afb" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot" alt="Libraries.io dependency status for GitHub repo"> <img src="https://img.shields.io/librariesio/github/Astrako/AstrakoBot?style=flat&logo=github&color=red" /> </a>
-<a href="http://hits.dwyl.com/Astrako/AstrakoBot" alt="HitCount"> <img src="http://hits.dwyl.com/Astrako/AstrakoBot.svg" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot/network/members" alt="GitHub stars"> <img src="https://img.shields.io/github/stars/Astrako/AstrakoBot?style=flat&logo=github&color=yellow" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot/network/members" alt="GitHub forks"> <img src="https://img.shields.io/github/forks/Astrako/AstrakoBot" /> </a>
-</p>
-<p align="center">
-<a href="https://github.com/Astrako/AstrakoBot" alt="GitHub commit activity"> <img src="https://img.shields.io/github/commit-activity/m/Astrako/AstrakoBot" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot/graphs/contributors" alt="GitHub contributors"> <img src="https://img.shields.io/github/contributors/Astrako/AstrakoBot?style=flat&logo=github" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot" alt="GitHub closed pull requests"> <img src="https://img.shields.io/github/issues-pr-closed-raw/Astrako/AstrakoBot?color=success" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot" alt="GitHub issues"> <img src="https://img.shields.io/github/issues-raw/Astrako/AstrakoBot?style=flat&logo=github&color=red" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot" alt="GitHub closed issues"> <img src="https://img.shields.io/github/issues-closed-raw/Astrako/AstrakoBot?style=flat&logo=github&color=success" /> </a>
-</p>
-<p align="center">
-<a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/made%20with-Python-1f425f.svg?style=flat&logo=python&color=blue" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot" alt="Python supported versions"> <img src="https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot" alt="pypi version"> <img src="https://img.shields.io/badge/pypi-v13.5-blue" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot" alt="GitHub repo size"> <img src="https://img.shields.io/github/repo-size/Astrako/AstrakoBot" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot/blob/master/LICENSE" alt="GPLv3 license"> <img src="https://img.shields.io/github/license/Astrako/AstrakoBot?style=flat&logo=github&color=success" /> </a>
-</p>
-<p align="center">
-<a href="" alt="Astrako"> <img src="https://img.shields.io/badge/built%20by-Astrako-blue" /> </a>
-<a href="https://github.com/Astrako/AstrakoBot/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/maintained%3F-yes-blue.svg" /> </a>
-<a href="https://makeapullrequest.com" alt="PRs Welcome"> <img src="https://img.shields.io/badge/PRs-welcome-blue.svg" /> </a>
-</p>
+![MINATO](https://i.imgur.com/ojnUEQ2.jpg)
 
-A modular Telegram Python bot running on python3 with a sqlalchemy database.
+# Minato Namikaze
 
-Originally a SaitamaRobot fork, AstrakoBot evolved further and was built to be more robust. 
+A modular Telegram Python bot running on python3 with a sqlalchemy database and an entirely themed persona to make Naruto suitable for Anime and Manga group chats. 
 
-* Bot link:  <a href="https://t.me/AstrakoBot" alt="AstrakoBot"> <img src="https://img.shields.io/badge/%F0%9F%A4%96%20-AstrakoBot-blue" /> </a>
+Can be found on telegram as [Minato Namikaze (bot)](http://t.me/NamikazeMinato_bot).
 
-* Support group:  <a href="https://t.me/AstrakoBotSupport" alt="AstrakoBotSupport"> <img src="https://aleen42.github.io/badges/src/telegram.svg" /> </a>
-
-* Recommended federation:  <a href="https://t.me/ALTF4Fed" alt="ALTF4Fed"> <img src="https://img.shields.io/badge/🚫-ALTF4Fed-red" /> </a>
-
-In support group you can ask for help, discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
+The Support group can be reached out to at [Minato Support](https://t.me/MinatoNamikaze_Support), where you can ask for help about [Minato Namikaze (bot)](https://t.me/NamikazeMinato_bot), discover/request new features, report bugs, and stay in the loop whenever a new update is available :) 
 
 
 ## How to setup/deploy.
 
 ### Read these notes carefully before proceeding 
- - Edit any mentions of @AstrakoBotSupport to your own support chat
- - Your code must be open source and a link to your fork's repository must be there in the start reply of the bot
+ - Edit any mentions of [@Minato Namikaze Support](https://t.me/MinatoNamikaze_Support) Support to your own support chat
+ - Your code must be open source and a link to your fork's repository must be there in the start reply of the bot [See this](https://github.com/DarkGod14/MinatoNamikaze-bot/blob/main/MinatoNamikaze/__main__.py#L13)
+ - Lastly, if you are found to run this repo without the code being open sourced or the repository link not mentioned in the bot, we will push a gban for you in our network because of being in violation of the license, you are free to be a dick and not respect the open source code (we do not mind) but we will not be having you around our chats
  - This repo does not come with technical support, so DO NOT come to us asking help about deploy/console errors
- 
+
+
+<details>
+  <summary>Steps to deploy on Heroku !! </summary>
+
+```
+Fill in all the details, Deploy!
+Now go to https://dashboard.heroku.com/apps/(app-name)/resources ( Replace (app-name) with your app name )
+REMEMBER: Turn on worker dyno (Don't worry It's free :D) & Webhook
+Now send the bot /start, If it doesn't respond go to https://dashboard.heroku.com/apps/(app-name)/settings and remove webhook and port.
+```
+
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DarkGod14/MinatoNamikaze-bot.git)
+
+</details>  
 <details>
   <summary>Steps to self Host!! </summary>
 
@@ -60,7 +43,7 @@ This is because markdown parsing is done by iterating through a dict, which is o
 There are two possible ways of configuring your bot: a config.py file, or ENV variables.
 
 The preferred version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `AstrakoBot` folder, alongside the `__main__.py` file. 
+This file should be placed in your `MinatoNamikaze` folder, alongside the `__main__.py` file. 
 This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of
 your other settings.
 
@@ -69,7 +52,7 @@ defaults set in the sample_config, hence making it easier to upgrade.
 
 An example `config.py` file could be:
 ```
-from AstrakoBot.sample_config import Config
+from MinatoNamikaze.sample_config import Config
 
 class Development(Config):
     OWNER_ID = 254318997  # your telegram ID
@@ -155,7 +138,7 @@ All that is needed is that your .py file is in the modules folder.
 
 To add commands, make sure to import the dispatcher via
 
-`from AstrakoBot import dispatcher`.
+`from MinatoNamikaze import dispatcher`.
 
 You can then add commands using the usual
 
@@ -173,17 +156,28 @@ through the `/stats` command, which is only available to the bot owner.
 
 ## Starting the bot.
 
-Once you've set up your database and your configuration is complete, simply run (Linux):
+Once you've set up your database and your configuration is complete, simply run the bat file(if on windows) or run (Linux):
 
-`python3 -m AstrakoBot`
+`python3 -m MinatoNamikaze`
 
-For queries or any issues regarding the bot please open an issue ticket or visit us at [AstrakoBotSupport](https://t.me/AstrakoBotSupport)
+You can use [nssm](https://nssm.cc/usage) to install the bot as service on windows and set it to restart on /gitpull 
+Make sure to edit the start and restart bats to your needs. 
+Note: the restart bat requires that User account control be disabled.
+
+For queries or any issues regarding the bot please open an issue ticket or visit us at [Minato Namikaze Support](https://t.me/MinatoNamikazeSupport)
+## How to setup on Heroku 
+For starters click on this button 
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DarkGod14/MinatoNamikaze-bot.git)
 
 
 ## Credits
-The bot is based on the original work done by [PaulSonOfLars](https://github.com/PaulSonOfLars) and [AnimeKaizoku](https://github.com/AnimeKaizoku)
-All original credits go to Paul and AnimeKaizoku, Without their efforts, this fork would not have been possible!
+The bot is based on the original work done by [PaulSonOfLars](https://github.com/PaulSonOfLars)
+This repo was just revamped to suit an Anime-centric community. All original credits go to Paul and his dedication, Without his efforts, this fork would not have been possible!
+
+Also, missing proper credit for blacklistusers taken from TheRealPhoenixBot (will add it later, this note says unless it is done)
 
 Any other authorship/credits can be seen through the commits.
 
-Should any be missing kindly let us know at [AstrakoBotSupport](https://t.me/AstrakoBotSupport) or simply submit a pull request on the readme.
+Should any be missing kindly let us know at [Minato Namikaze Support](https://t.me/MinatoNamikazeSupport) or simply submit a pull request on the readme.
+

@@ -2,8 +2,8 @@ import importlib
 
 import collections
 
-from AstrakoBot import dispatcher, telethn
-from AstrakoBot.__main__ import (
+from MinatoNamikaze import dispatcher, telethn
+from MinatoNamikaze.__main__ import (
     CHAT_SETTINGS,
     DATA_EXPORT,
     DATA_IMPORT,
@@ -15,7 +15,7 @@ from AstrakoBot.__main__ import (
     USER_INFO,
     USER_SETTINGS,
 )
-from AstrakoBot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from MinatoNamikaze.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
@@ -29,7 +29,7 @@ def load(update: Update, context: CallbackContext):
     )
 
     try:
-        imported_module = importlib.import_module("AstrakoBot.modules." + text)
+        imported_module = importlib.import_module("MinatoNamikaze.modules." + text)
     except:
         load_messasge.edit_text("Does that module even exist?")
         return
@@ -97,7 +97,7 @@ def unload(update: Update, context: CallbackContext):
     )
 
     try:
-        imported_module = importlib.import_module("AstrakoBot.modules." + text)
+        imported_module = importlib.import_module("MinatoNamikaze.modules." + text)
     except:
         unload_messasge.edit_text("Does that module even exist?")
         return
@@ -165,7 +165,7 @@ def listmodules(update: Update, context: CallbackContext):
     for helpable_module in HELPABLE:
         helpable_module_info = IMPORTED[helpable_module]
         file_info = IMPORTED[helpable_module_info.__mod_name__.lower()]
-        file_name = file_info.__name__.rsplit("AstrakoBot.modules.", 1)[1]
+        file_name = file_info.__name__.rsplit("MinatoNamikaze.modules.", 1)[1]
         mod_name = file_info.__mod_name__
         module_list.append(f"- <code>{mod_name} ({file_name})</code>\n")
     module_list = "Following modules are loaded : \n\n" + "".join(module_list)

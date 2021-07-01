@@ -2,8 +2,8 @@ import random
 import threading
 from typing import Union
 
-from AstrakoBot.modules.helper_funcs.msg_types import Types
-from AstrakoBot.modules.sql import BASE, SESSION
+from MinatoNamikaze.modules.helper_funcs.msg_types import Types
+from MinatoNamikaze.modules.sql import BASE, SESSION
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"

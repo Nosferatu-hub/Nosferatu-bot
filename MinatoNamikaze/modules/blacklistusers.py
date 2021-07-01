@@ -1,7 +1,7 @@
 # Module to blacklist users and prevent them from using commands by @TheRealPhoenix
 import html
-import AstrakoBot.modules.sql.blacklistusers_sql as sql
-from AstrakoBot import (
+import MinatoNamikaze.modules.sql.blacklistusers_sql as sql
+from MinatoNamikaze import (
     DEV_USERS,
     OWNER_ID,
     SUDO_USERS,
@@ -9,12 +9,12 @@ from AstrakoBot import (
     WHITELIST_USERS,
     dispatcher,
 )
-from AstrakoBot.modules.helper_funcs.chat_status import dev_plus
-from AstrakoBot.modules.helper_funcs.extraction import (
+from MinatoNamikaze.modules.helper_funcs.chat_status import dev_plus
+from MinatoNamikaze.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from AstrakoBot.modules.log_channel import gloggable
+from MinatoNamikaze.modules.log_channel import gloggable
 from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async

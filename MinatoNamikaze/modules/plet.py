@@ -13,12 +13,12 @@ from telegram.ext import (
 )
 
 from telegram.ext import Filters, MessageHandler, run_async
-from AstrakoBot.modules.helper_funcs.extraction import extract_user_and_text
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.helper_funcs.misc import delete
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.thonkify_dict import thonkifydict
+from MinatoNamikaze.modules.helper_funcs.extraction import extract_user_and_text
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.helper_funcs.misc import delete
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.thonkify_dict import thonkifydict
 
 
 def plet(update: Update, context: CallbackContext):

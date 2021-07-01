@@ -12,10 +12,10 @@ from telegram.ext import CallbackContext, run_async
 from ujson import loads
 from yaml import load, Loader
 
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.github import getphh
-from AstrakoBot.modules.helper_funcs.misc import delete
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.github import getphh
+from MinatoNamikaze.modules.helper_funcs.misc import delete
 
 
 def magisk(update: Update, context: CallbackContext):

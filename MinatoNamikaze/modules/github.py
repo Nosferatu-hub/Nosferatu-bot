@@ -1,15 +1,15 @@
 import html
 from typing import Optional, List
 
-import AstrakoBot.modules.helper_funcs.git_api as api
-import AstrakoBot.modules.sql.github_sql as sql
+import MinatoNamikaze.modules.helper_funcs.git_api as api
+import MinatoNamikaze.modules.sql.github_sql as sql
 
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot import dispatcher, OWNER_ID, EVENT_LOGS, SUDO_USERS, SUPPORT_USERS
-from AstrakoBot.modules.helper_funcs.filters import CustomFilters
-from AstrakoBot.modules.helper_funcs.chat_status import user_admin
-from AstrakoBot.modules.helper_funcs.misc import delete
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze import dispatcher, OWNER_ID, EVENT_LOGS, SUDO_USERS, SUPPORT_USERS
+from MinatoNamikaze.modules.helper_funcs.filters import CustomFilters
+from MinatoNamikaze.modules.helper_funcs.chat_status import user_admin
+from MinatoNamikaze.modules.helper_funcs.misc import delete
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
 
 from telegram.ext import (
     CallbackContext,

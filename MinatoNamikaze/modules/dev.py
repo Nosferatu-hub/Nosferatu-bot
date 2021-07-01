@@ -5,10 +5,10 @@ import sys
 from contextlib import suppress
 from time import sleep
 
-import AstrakoBot
+import MinatoNamikaze
 
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.helper_funcs.chat_status import dev_plus
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.helper_funcs.chat_status import dev_plus
 from telegram import TelegramError, Update
 from telegram.error import Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, run_async
@@ -18,13 +18,13 @@ from telegram.ext import CallbackContext, CommandHandler, run_async
 def allow_groups(update: Update, context: CallbackContext):
     args = context.args
     if not args:
-        state = "Lockdown is " + "on" if not AstrakoBot.ALLOW_CHATS else "off"
+        state = "Lockdown is " + "on" if not MinatoNamikaze.ALLOW_CHATS else "off"
         update.effective_message.reply_text(f"Current state: {state}")
         return
     if args[0].lower() in ["off", "no"]:
-        AstrakoBot.ALLOW_CHATS = True
+        MinatoNamikaze.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        AstrakoBot.ALLOW_CHATS = False
+        MinatoNamikaze.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return

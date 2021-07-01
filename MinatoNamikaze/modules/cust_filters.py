@@ -16,26 +16,26 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html, escape_markdown
 
-from AstrakoBot import dispatcher, LOGGER, SUDO_USERS
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.helper_funcs.handlers import MessageHandlerChecker
-from AstrakoBot.modules.helper_funcs.chat_status import user_admin
-from AstrakoBot.modules.helper_funcs.extraction import extract_text
-from AstrakoBot.modules.helper_funcs.filters import CustomFilters
-from AstrakoBot.modules.helper_funcs.misc import build_keyboard_parser, delete
-from AstrakoBot.modules.helper_funcs.msg_types import get_filter_type
-from AstrakoBot.modules.helper_funcs.string_handling import (
+from MinatoNamikaze import dispatcher, LOGGER, SUDO_USERS
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.helper_funcs.handlers import MessageHandlerChecker
+from MinatoNamikaze.modules.helper_funcs.chat_status import user_admin
+from MinatoNamikaze.modules.helper_funcs.extraction import extract_text
+from MinatoNamikaze.modules.helper_funcs.filters import CustomFilters
+from MinatoNamikaze.modules.helper_funcs.misc import build_keyboard_parser, delete
+from MinatoNamikaze.modules.helper_funcs.msg_types import get_filter_type
+from MinatoNamikaze.modules.helper_funcs.string_handling import (
     split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
 )
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.sql import cust_filters_sql as sql
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.sql import cust_filters_sql as sql
 
-from AstrakoBot.modules.connection import connected
+from MinatoNamikaze.modules.connection import connected
 
-from AstrakoBot.modules.helper_funcs.alternate import send_message, typing_action
+from MinatoNamikaze.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 

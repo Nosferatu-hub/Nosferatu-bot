@@ -11,10 +11,10 @@ from telegram.ext import (
     run_async,
 )
 
-import AstrakoBot.modules.sql.users_sql as sql
-from AstrakoBot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from AstrakoBot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from AstrakoBot.modules.sql.users_sql import get_all_users
+import MinatoNamikaze.modules.sql.users_sql as sql
+from MinatoNamikaze import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from MinatoNamikaze.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from MinatoNamikaze.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
@@ -154,11 +154,11 @@ def chat_checker(update: Update, context: CallbackContext):
 
 def __user_info__(user_id):
     if user_id in [777000, 1087968824]:
-        return """Groups count: <code>???</code>"""
+        return """╘══「 Groups count: <code>???</code> 」"""
     if user_id == dispatcher.bot.id:
-        return """Groups count: <code>???</code>"""
+        return """╘══「 Groups count: <code>???</code> 」"""
     num_chats = sql.get_user_num_chats(user_id)
-    return f"""Groups count: <code>{num_chats}</code>"""
+    return f"""╘══「 Groups count: <code>{num_chats}</code> 」"""
 
 
 def __stats__():

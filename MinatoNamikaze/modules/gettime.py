@@ -2,10 +2,10 @@ import datetime
 from typing import List
 
 from requests import get
-from AstrakoBot import TIME_API_KEY, dispatcher
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.helper_funcs.misc import delete
+from MinatoNamikaze import TIME_API_KEY, dispatcher
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.helper_funcs.misc import delete
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 

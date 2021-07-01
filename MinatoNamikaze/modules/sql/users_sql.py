@@ -1,7 +1,7 @@
 import threading
 
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.sql import BASE, SESSION
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,

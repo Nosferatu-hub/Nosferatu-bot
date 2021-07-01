@@ -1,9 +1,9 @@
 from telegram import Update, Bot, ParseMode
 from telegram.ext import CommandHandler, CallbackContext, run_async
 
-import AstrakoBot.modules.sql.private_notes as sql
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.helper_funcs.chat_status import user_admin
+import MinatoNamikaze.modules.sql.private_notes as sql
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.helper_funcs.chat_status import user_admin
 
 
 @user_admin

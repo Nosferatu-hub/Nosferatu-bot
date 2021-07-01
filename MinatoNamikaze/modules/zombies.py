@@ -1,13 +1,13 @@
 from asyncio import sleep
 from telethon import events
-from AstrakoBot import dispatcher
-from AstrakoBot import telethn as AstrakoBotTelethonClient
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.helper_funcs.telethn.chatstatus import user_is_admin
-from AstrakoBot.modules.helper_funcs.misc import delete
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze import telethn as MinatoNamikazeTelethonClient
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.helper_funcs.telethn.chatstatus import user_is_admin
+from MinatoNamikaze.modules.helper_funcs.misc import delete
 
 
-@AstrakoBotTelethonClient.on(events.NewMessage(pattern=f"^[!/]zombies ?(.*)"))
+@MinatoNamikazeTelethonClient.on(events.NewMessage(pattern=f"^[!/]zombies ?(.*)"))
 async def zombies(event):
     chat = await event.get_chat()
     chat_id = event.chat_id

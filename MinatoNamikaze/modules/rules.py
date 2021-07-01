@@ -1,9 +1,9 @@
 from typing import Optional
 
-import AstrakoBot.modules.sql.rules_sql as sql
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.helper_funcs.chat_status import user_admin
-from AstrakoBot.modules.helper_funcs.string_handling import markdown_parser
+import MinatoNamikaze.modules.sql.rules_sql as sql
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.helper_funcs.chat_status import user_admin
+from MinatoNamikaze.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,

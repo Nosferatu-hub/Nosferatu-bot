@@ -5,9 +5,9 @@ import time
 from functools import partial
 from contextlib import suppress
 
-import AstrakoBot.modules.sql.welcome_sql as sql
-import AstrakoBot
-from AstrakoBot import (
+import MinatoNamikaze.modules.sql.welcome_sql as sql
+import MinatoNamikaze
+from MinatoNamikaze import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -18,19 +18,19 @@ from AstrakoBot import (
     dispatcher,
     JOIN_LOGGER,
 )
-from AstrakoBot.modules.helper_funcs.chat_status import (
+from MinatoNamikaze.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from AstrakoBot.modules.helper_funcs.misc import build_keyboard, delete, revert_buttons
-from AstrakoBot.modules.helper_funcs.msg_types import get_welcome_type
-from AstrakoBot.modules.helper_funcs.string_handling import (
+from MinatoNamikaze.modules.helper_funcs.misc import build_keyboard, delete, revert_buttons
+from MinatoNamikaze.modules.helper_funcs.msg_types import get_welcome_type
+from MinatoNamikaze.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from AstrakoBot.modules.log_channel import loggable
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.sql.global_bans_sql import is_user_gbanned
+from MinatoNamikaze.modules.log_channel import loggable
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -162,7 +162,7 @@ def new_member(update: Update, context: CallbackContext):
 
     for new_mem in new_members:
 
-        if new_mem.id == bot.id and not AstrakoBot.ALLOW_CHATS:
+        if new_mem.id == bot.id and not MinatoNamikaze.ALLOW_CHATS:
             with suppress(BadRequest):
                 update.effective_message.reply_text(f"Groups are disabled for {bot.first_name}, I'm outta here.")
             bot.leave_chat(update.effective_chat.id)
@@ -1150,7 +1150,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "Welcomes/Goodbyes"
+__mod_name__ = "Welcome/Goodbye"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,

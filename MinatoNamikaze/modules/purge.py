@@ -1,19 +1,19 @@
 from asyncio import sleep
-from AstrakoBot.modules.helper_funcs.telethn.chatstatus import (
+from MinatoNamikaze.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )
-from AstrakoBot import telethn
+from MinatoNamikaze import telethn
 import time
 from telethon import events
 
-from AstrakoBot import telethn
-from AstrakoBot.modules.helper_funcs.telethn.chatstatus import (
+from MinatoNamikaze import telethn
+from MinatoNamikaze.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )
 
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
 
 
 @telethn.on(events.NewMessage(pattern="^[!/]purge$"))

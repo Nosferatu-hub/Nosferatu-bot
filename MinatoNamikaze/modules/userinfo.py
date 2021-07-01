@@ -13,7 +13,7 @@ from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from AstrakoBot import (
+from MinatoNamikaze import (
     DEV_USERS,
     OWNER_ID,
     SUDO_USERS,
@@ -23,19 +23,102 @@ from AstrakoBot import (
     dispatcher,
     sw,
 )
-from AstrakoBot.__main__ import STATS, GDPR, TOKEN, USER_INFO
-import AstrakoBot.modules.sql.userinfo_sql as sql
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.sql.global_bans_sql import is_user_gbanned
-from AstrakoBot.modules.sql.afk_sql import is_afk, check_afk_status
-from AstrakoBot.modules.sql.users_sql import get_user_num_chats
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.helper_funcs.chat_status import sudo_plus
-from AstrakoBot.modules.helper_funcs.extraction import extract_user
-from AstrakoBot.modules.helper_funcs.misc import delete
-from AstrakoBot import telethn as AstrakoBotTelethonClient, SUDO_USERS, SUPPORT_USERS
+from MinatoNamikaze.__main__ import STATS, GDPR, TOKEN, USER_INFO
+import MinatoNamikaze.modules.sql.userinfo_sql as sql
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.sql.global_bans_sql import is_user_gbanned
+from MinatoNamikaze.modules.sql.afk_sql import is_afk, check_afk_status
+from MinatoNamikaze.modules.sql.users_sql import get_user_num_chats
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.helper_funcs.chat_status import sudo_plus
+from MinatoNamikaze.modules.helper_funcs.extraction import extract_user
+from MinatoNamikaze.modules.helper_funcs.misc import delete
+from MinatoNamikaze import telethn as MinatoNamikazeTelethonClient, SUDO_USERS, SUPPORT_USERS
 
 
+def no_by_per(totalhp, percentage):
+    """
+    rtype: num of `percentage` from total
+    eg: 1000, 10 -> 10% of 1000 (100)
+    """
+    return totalhp * percentage / 100
+
+
+def get_percentage(totalhp, earnedhp):
+    """
+    rtype: percentage of `totalhp` num
+    eg: (1000, 100) will return 10%
+    """
+
+    matched_less = totalhp - earnedhp
+    per_of_totalhp = 100 - matched_less * 100.0 / totalhp
+    per_of_totalhp = str(int(per_of_totalhp))
+    return per_of_totalhp
+
+
+def hpmanager(user):
+    total_hp = (get_user_num_chats(user.id) + 10) * 10
+
+    if not is_user_gbanned(user.id):
+
+        # Assign new var `new_hp` since we need `total_hp` in
+        # end to calculate percentage.
+        new_hp = total_hp
+
+        # if no username decrease 25% of hp.
+        if not user.username:
+            new_hp -= no_by_per(total_hp, 25)
+        try:
+            dispatcher.bot.get_user_profile_photos(user.id).photos[0][-1]
+        except IndexError:
+            # no profile photo ==> -25% of hp
+            new_hp -= no_by_per(total_hp, 25)
+        # if no /setme exist ==> -20% of hp
+        if not sql.get_user_me_info(user.id):
+            new_hp -= no_by_per(total_hp, 20)
+        # if no bio exsit ==> -10% of hp
+        if not sql.get_user_bio(user.id):
+            new_hp -= no_by_per(total_hp, 10)
+
+        if is_afk(user.id):
+            afkst = check_afk_status(user.id)
+            # if user is afk and no reason then decrease 7%
+            # else if reason exist decrease 5%
+            if not afkst.reason:
+                new_hp -= no_by_per(total_hp, 7)
+            else:
+                new_hp -= no_by_per(total_hp, 5)
+
+        # fbanned users will have (2*number of fbans) less from max HP
+        # Example: if HP is 100 but user has 5 diff fbans
+        # Available HP is (2*5) = 10% less than Max HP
+        # So.. 10% of 100HP = 90HP
+
+
+# Commenting out fban health decrease cause it wasnt working and isnt needed ig.
+#_, fbanlist = get_user_fbanlist(user.id)
+#new_hp -= no_by_per(total_hp, 2 * len(fbanlist))
+
+# Bad status effects:
+# gbanned users will always have 5% HP from max HP
+# Example: If HP is 100 but gbanned
+# Available HP is 5% of 100 = 5HP
+
+    else:
+        new_hp = no_by_per(total_hp, 5)
+
+    return {
+        "earnedhp": int(new_hp),
+        "totalhp": int(total_hp),
+        "percentage": get_percentage(total_hp, new_hp)
+    }
+
+
+def make_bar(per):
+    done = min(round(per / 10), 10)
+    return "■" * done + "□" * (10 - done)
+    
+    
 def get_id(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -78,7 +161,7 @@ def get_id(update: Update, context: CallbackContext):
             )
 
 
-@AstrakoBotTelethonClient.on(
+@MinatoNamikazeTelethonClient.on(
     events.NewMessage(pattern="/ginfo ", from_users=(SUDO_USERS or []) + (SUPPORT_USERS or []))
 )
 async def group_info(event) -> None:
@@ -161,7 +244,7 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text("<code>Appraising...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"<b>User info:</b>\n"
+        f"╒═══「<b> User info:</b> 」\n"
         f"ID: <code>{user.id}</code>\n"
         f"First Name: {html.escape(user.first_name)}"
     )
@@ -191,6 +274,9 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Detected")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("Admin")
+    if user_id not in [bot.id, 777000, 1087968824]:
+        userhp = hpmanager(user)
+        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
         spamwtc = sw.get_ban(int(user.id))
@@ -206,24 +292,24 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nUser level: <b>god</b>"
+        text += "\n\nUser level: <b>God</b>"
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nUser level: <b>developer</b>"
+        text += "\n\nUser level: <b>Developer</b>"
         disaster_level_present = True
     elif user.id in SUDO_USERS:
-        text += "\n\nUser level: <b>sudo</b>"
+        text += "\n\nUser level: <b>Sudo</b>"
         disaster_level_present = True
     elif user.id in SUPPORT_USERS:
-        text += "\n\nUser level: <b>support</b>"
+        text += "\n\nUser level: <b>Support</b>"
         disaster_level_present = True
     elif user.id in WHITELIST_USERS:
-        text += "\n\nUser level: <b>whitelist</b>"
+        text += "\n\nUser level: <b>Whitelist</b>"
         disaster_level_present = True
 
-    # if disaster_level_present:
-    #     text += ' [<a href="https://t.me/OnePunchUpdates/155">?</a>]'.format(
-    #         bot.username)
+    if disaster_level_present:
+         text += ' [<a href="https://t.me/NamikazeMinatoChannel/5">?</a>]'.format(
+             bot.username)
 
     try:
         user_member = chat.get_member(user.id)
@@ -425,7 +511,7 @@ def gdpr(update: Update, context: CallbackContext):
         mod.__gdpr__(update.effective_user.id)
 
     update.effective_message.reply_text("Your personal data has been deleted.\n\nNote that this will not unban "
-                                        "you from any chats, as that is telegram data, not AstrakoBot data. "
+                                        "you from any chats, as that is telegram data, not MinatoNamikaze data. "
                                         "Flooding, warns, and gbans are also preserved, as of "
                                         "[this](https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-erasure/), "
                                         "which clearly states that the right to erasure does not apply "
@@ -473,6 +559,9 @@ Examples:
 *Overall Information about you:*
  • `/info`*:* get information about a user.
 
+*What is that health thingy?*
+ Come and see [HP System explained](https://t.me/NamikazeMinatoChannel/53)
+ 
 *Guide to the General Data Protection Regulation (GDPR):*
  • `/gdpr`*:* deletes your information from the bot's database. Private chats only.
 """

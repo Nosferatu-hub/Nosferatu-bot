@@ -5,7 +5,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from AstrakoBot import (
+from MinatoNamikaze import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -14,8 +14,8 @@ from AstrakoBot import (
     WHITELIST_USERS,
     dispatcher,
 )
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.helper_funcs.chat_status import (
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -26,9 +26,9 @@ from AstrakoBot.modules.helper_funcs.chat_status import (
     user_can_ban,
     can_delete,
 )
-from AstrakoBot.modules.helper_funcs.extraction import extract_user_and_text
-from AstrakoBot.modules.helper_funcs.string_handling import extract_time
-from AstrakoBot.modules.log_channel import gloggable, loggable
+from MinatoNamikaze.modules.helper_funcs.extraction import extract_user_and_text
+from MinatoNamikaze.modules.helper_funcs.string_handling import extract_time
+from MinatoNamikaze.modules.log_channel import gloggable, loggable
 
 
 @connection_status

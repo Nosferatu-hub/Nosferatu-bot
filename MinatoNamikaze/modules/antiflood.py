@@ -4,15 +4,15 @@ import re
 
 from telegram import Message, Chat, Update, User, ChatPermissions
 
-from AstrakoBot import WHITELIST_USERS, dispatcher
-from AstrakoBot.modules.helper_funcs.chat_status import (
+from MinatoNamikaze import WHITELIST_USERS, dispatcher
+from MinatoNamikaze.modules.helper_funcs.chat_status import (
     bot_admin,
     is_user_admin,
     user_admin,
     user_admin_no_reply,
 )
-from AstrakoBot.modules.log_channel import loggable
-from AstrakoBot.modules.sql import antiflood_sql as sql
+from MinatoNamikaze.modules.log_channel import loggable
+from MinatoNamikaze.modules.sql import antiflood_sql as sql
 from telegram.error import BadRequest
 from telegram.ext import (
     CallbackContext,
@@ -23,10 +23,10 @@ from telegram.ext import (
     run_async,
 )
 from telegram.utils.helpers import mention_html, escape_markdown
-from AstrakoBot.modules.helper_funcs.string_handling import extract_time
-from AstrakoBot.modules.connection import connected
-from AstrakoBot.modules.helper_funcs.alternate import send_message
-from AstrakoBot.modules.sql.approve_sql import is_approved
+from MinatoNamikaze.modules.helper_funcs.string_handling import extract_time
+from MinatoNamikaze.modules.connection import connected
+from MinatoNamikaze.modules.helper_funcs.alternate import send_message
+from MinatoNamikaze.modules.sql.approve_sql import is_approved
 
 FLOOD_GROUP = 3
 

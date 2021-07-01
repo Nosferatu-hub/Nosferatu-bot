@@ -3,10 +3,10 @@ from google_trans_new import LANGUAGES, google_translator
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from AstrakoBot import dispatcher
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.helper_funcs.misc import delete
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze import dispatcher
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.helper_funcs.misc import delete
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
 
 
 def totranslate(update: Update, context: CallbackContext):

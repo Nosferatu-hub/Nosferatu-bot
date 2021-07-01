@@ -1,10 +1,10 @@
 from random import randint
 
 import requests as r
-from AstrakoBot import SUPPORT_CHAT, WALL_API, dispatcher
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
-from AstrakoBot.modules.sql.clear_cmd_sql import get_clearcmd
-from AstrakoBot.modules.helper_funcs.misc import delete
+from MinatoNamikaze import SUPPORT_CHAT, WALL_API, dispatcher
+from MinatoNamikaze.modules.disable import DisableAbleCommandHandler
+from MinatoNamikaze.modules.sql.clear_cmd_sql import get_clearcmd
+from MinatoNamikaze.modules.helper_funcs.misc import delete
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 

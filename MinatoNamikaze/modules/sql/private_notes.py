@@ -1,6 +1,6 @@
 import threading
 from sqlalchemy import Column, String, Boolean, UnicodeText
-from AstrakoBot.modules.sql import SESSION, BASE
+from MinatoNamikaze.modules.sql import SESSION, BASE
 
 
 class PrivateNotes(BASE):
