@@ -40,13 +40,13 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 
 
 # This can serve as a deeplink example.
-# disasters =
+# god_mode =
 # """ Text here """
 
 # do not async, not a handler
-# def send_disasters(update):
+# def send_god_mode(update):
 #    update.effective_message.reply_text(
-#        disasters, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+#        god_mode, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 ### Deep link example ends
 
