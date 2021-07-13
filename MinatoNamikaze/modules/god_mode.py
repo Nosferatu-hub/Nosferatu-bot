@@ -474,9 +474,6 @@ Group admins/group owners do not need these commands.
 • `/rmute user group`: remote mute
 • `/runmute user group`: remote un-mute
 • `/ginfo username/link/ID`: pulls info panel for entire group
-
-*Chatbot:* 
-• `/listaichats`: lists the chats the chatmode is enabled in
  
 *Debugging and Shell:* 
 • `/debug <on/off>`: logs commands to updates.txt
