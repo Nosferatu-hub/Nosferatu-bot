@@ -16,7 +16,7 @@ from MinatoNamikaze.modules.helper_funcs.chat_status import (
     ADMIN_CACHE,
 )
 
-from MinatoNamikaze.modules.helper_funcs.admin_rights import (
+from MinatoNamikaze.modules.helper_funcs.telethn.admin_rights import (
     user_can_pin,
     user_can_promote,
     user_can_changeinfo,
