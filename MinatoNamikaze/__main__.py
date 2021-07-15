@@ -93,7 +93,7 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-MINATO_IMG = "https://i.imgur.com/Ol72ko1.jpg"
+MINATO_IMG = "https://telegra.ph/file/02819e6be74693fd4bb79.jpg"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -202,44 +202,27 @@ def start(update: Update, context: CallbackContext):
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
+                     [[
+                        InlineKeyboardButton(
+                            text=" Add me to your group😎 ",
+                            url="t.me/{}?startgroup=true".format(
+                                context.bot.username)),
+                         InlineKeyboardButton(
+                            text=" Help👀 ",
+                            url="https://t.me/@NosferatuSupport_bot?start=help"),
+                     ],
                      [
-                        [
-                            InlineKeyboardButton(
-                                text="Add me to your group😎",
-                                url="t.me/{}?startgroup=true".format(
-                                    context.bot.username,
-                                ),
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Source Code📂",
-                                url="https://github.com/DarkGod14/MinatoNamikaze-bot",
-                            ),
-                            InlineKeyboardButton(
-                                text="Minato Namikaze (Log)👀",
-                                url="https://t.me/NamikazeMinatoChannel",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Minato️ Namikaze Support🙈",
-                                url="https://t.me/MinatoNamikazeSupport",
-                            ),
-                            InlineKeyboardButton(
-                                text="Minato️ Namikaze Updates⚙️",
-                                url="https://t.me/NamikazeMinatoChannel",
-                             ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Deploy To Heroku💻",
-                                url="https://heroku.com/deploy?template=https://github.com/DarkGod14/MinatoNamikaze-bot.git",
-                            ),
-                        ],
-                    ],
-                ),
-            )
+                        InlineKeyboardButton(
+                             text=" 📛💯My Group📛💯 ",
+                             url="https://t.me/DroidWorldGroup")
+                         
+                     ],
+                     [
+                        InlineKeyboardButton(
+                             text=" 📛💯My Channel📛💯 ",
+                             url="https://t.me/Nosferatu_1972")
+                    
+                    ]]))
     else:
         update.effective_message.reply_text(
             "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
